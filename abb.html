@@ -1,0 +1,48 @@
+#include<iostream.h>
+#include<conio.h>
+class sel_sort
+{
+ 	int i,j,small,pos;
+ 	public:
+ 	void sort(int[],int);
+ };
+ 	void sel_sort::sort(int arr[],int size)
+ 	{
+ int n;
+ cout<<"the entered array is \n";
+ 	for(i=0;i<size;i++)
+ 	{
+ 		 cout<<arr[i]<<"\t";
+  	}
+ 		 for(i=0;i<size-1;i++)
+ 		 {
+  			small=arr[i];
+  			pos=i;
+for(j=i+1;j<size;j++)
+  			{
+   				if(arr[j]<small)
+   				{
+   					small=arr[j];
+    				pos=j;
+     			}
+    	}
+    	n=arr[i];
+    	arr[i]=arr[pos];
+    	arr[pos]=n;
+    	}
+
+     cout<<"\n the sorted array is\n ";
+     for(i=0;i<size;i++)
+     cout<<arr[i]<<"\t";
+     }
+void main()
+{
+ 	clrscr();
+ 	int arr[5];
+cout<<"\t *****SELECTION SORT*****\nEnter the elements into array";
+ 	for(int i=0;i<5;i++)
+ 	cin>>arr[i];
+ 	sel_sort obj;
+ 	obj.sort(arr,5);
+ 	getch();
+ }
